@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
-		<title>Milmon Blog</title>
+		<title id="title">Milmon Blog</title>
 		<link rel="shortcut icon" type="image/x-icon" href="../file/image/head.png">
 		<link rel="stylesheet" href="../file/css/mdui.min.css"/>
 		<link rel="stylesheet" href="../file/css/milmon.css"/>
@@ -19,6 +19,7 @@
 				var i=0;
 				while(i<datas.length-1&&datas[i].split("|")[0]!=getParam("id"))i++;
 				$("blog-title").innerHTML=datas[i].split("|")[1];
+				$("title").innerHTML=datas[i].split("|")[1]+" - Milmon Blog";
 				$("blog-time").innerHTML=datas[i].split("|")[2];
 			});
 		</script>
