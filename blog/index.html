@@ -15,9 +15,9 @@
 				for(var i=0;i<data.length;i++){
 					var tmp=data[i].split("|");
 					if(tmp<4)continue;
-					if(tmp[3]=="2")total++,htmlcode=htmlcode+'<div class="mdui-divider mdui-m-y-0"></div><p style="font-size: 24px;">'+tmp[1]+'</p><p style="font-size: 12px; color: #666">'+tmp[2]+'</p>';
+					if(tmp[3]=="2")total++,htmlcode=htmlcode+'<div class="mdui-divider mdui-m-y-0"></div><p style="font-size: 24px;" onclick="window.location.href=\'/blog/article?id='+tmp[0]+'\';">'+tmp[1]+'</p><p style="font-size: 12px; color: #666">'+tmp[2]+'</p>';
 				}
-				$('page-index').innerHTML="<b>文章 ("+String(total)+")</b>"+htmlcode;
+				$('page-index').innerHTML="<p><strong>文章 ("+String(total)+")</strong></p>"+htmlcode;
 			});
 		</script>
 	</head>
