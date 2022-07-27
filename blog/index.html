@@ -9,6 +9,17 @@
 		<link rel="stylesheet" href="../file/css/milmon.css"/>
 		<script src="../file/script/milmon.js"></script>
 		<script src="../file/script/mdui.min.js"></script>
+		<script>
+			loadfile("config.txt",function(text){
+				var data=text.split("\n"),htmlcode="";
+				for(var i=0;i<data.length;i++){
+					var tmp=data[i].split("|");
+					if(tmp<4)continue;
+					htmlcode=htmlcode+'<div class="mdui-divider mdui-m-y-0"></div><p style="font-size: 24px;">'+tmp[1]+'</p><p style="font-size: 12px; color: #666">'+tmp[2]+'</p>';
+				}
+				$('page-index').innerHTML=htmlcode;
+			});
+		</script>
 	</head>
 	<body class="mdui-theme-primary-purple" style="background:#B7EEF8">
 
@@ -56,8 +67,10 @@
 				<div class="mdui-row">
 					<div class="mdui-container mdui-shadow-5 mdui-col-xs-6" style="background: white;">
 						<div style="padding: 7px;" id="page-index">
+							<div class="mdui-divider mdui-m-y-0"></div>
 							<p style="font-size: 24px;">hhh</p>
 							<p style="font-size: 12px; color: #666">111</p>
+							<div class="mdui-divider mdui-m-y-0"></div>
 						</div>
 					</div>
 				</div>
