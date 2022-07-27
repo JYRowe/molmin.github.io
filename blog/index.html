@@ -15,7 +15,7 @@
 				for(var i=0;i<data.length;i++){
 					var tmp=data[i].split("|");
 					if(tmp<4)continue;
-					if(tmp[3]=="2")total++,htmlcode=htmlcode+'<div class="mdui-divider mdui-m-y-0"></div><p style="font-size: 24px;" onclick="window.location.href=\'/blog/article?id='+tmp[0]+'\';">'+tmp[1]+'</p><p style="font-size: 12px; color: #666">'+tmp[2]+'</p>';
+					if(tmp[3]=="2")total++,htmlcode=htmlcode+'<div class="mdui-divider mdui-m-y-0"></div><p class="problemsearch-title" style="font-size: 24px;" onclick="window.location.href=\'/blog/article?id='+tmp[0]+'\';">'+tmp[1]+'</p><p style="font-size: 12px; color: #666">'+tmp[2]+'</p>';
 				}
 				$('page-index').innerHTML="<p><strong>文章 ("+String(total)+")</strong></p>"+htmlcode;
 			});
@@ -40,20 +40,20 @@
 		<!-- ---------左侧菜单--------------- -->
 		<div class="mdui-drawer mdui-drawer-close" id="main-drawer" style="background:rgb(52,152,219);color:white">
 			<ul class="mdui-list">
-				<a class="mdui-list-item mdui-ripple mdui-list-item-active" href="">
+				<a class="mdui-list-item mdui-ripple" href="../index">
 					<i class="mdui-list-item-icon mdui-icon material-icons" style="color:#fff;">home</i>
 					<div class="mdui-list-item-content">首页</div>
 				</a>
 				<div class="mdui-divider mdui-m-y-0"></div>
-				<a class="mdui-list-item mdui-ripple" href="blog">
+				<a class="mdui-list-item mdui-ripple mdui-list-item-active" href="index.html">
 					<i class="mdui-list-item-icon mdui-icon material-icons" style="color:#fff;">library_books</i>
 					<div class="mdui-list-item-content">博文列表</div>
 				</a>
-				<a class="mdui-list-item mdui-ripple" href="problems">
+				<a class="mdui-list-item mdui-ripple" href="../problems">
 					<i class="mdui-list-item-icon mdui-icon material-icons" style="color:#fff;">work</i>
 					<div class="mdui-list-item-content">题目中心</div>
 				</a>
-				<a class="mdui-list-item mdui-ripple" href="tools">
+				<a class="mdui-list-item mdui-ripple" href="../tools">
 					<i class="mdui-list-item-icon mdui-icon material-icons" style="color:#fff;">apps</i>
 					<div class="mdui-list-item-content">工具中心</div>
 				</a>
