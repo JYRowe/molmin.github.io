@@ -9,6 +9,14 @@
 		<link rel="stylesheet" href="../file/css/milmon.css"/>
 		<script src="../file/script/milmon.js"></script>
 		<script src="../file/script/mdui.min.js"></script>
+		<script>
+			loadfile("datas/"+getParam("id")+".md",function(text){
+				$("main").innerHTML=markdown(text);
+				MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+			});
+		</script>
+		<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$', '$']], displayMath: [['$$', '$$']]}});</script>
+        	<script src="https://yhx-12243.github.io/OI-transit/additional_files/MathJax-master/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 	</head>
 	<body class="mdui-theme-primary-purple" style="background:#B7EEF8">
 
@@ -29,30 +37,35 @@
 		<!-- ---------左侧菜单--------------- -->
 		<div class="mdui-drawer mdui-drawer-close" id="main-drawer" style="background:rgb(52,152,219);color:white">
 			<ul class="mdui-list">
-				<a class="mdui-list-item mdui-ripple mdui-list-item-active" href="">
+				<a class="mdui-list-item mdui-ripple" href="../index.html">
 					<i class="mdui-list-item-icon mdui-icon material-icons" style="color:#fff;">home</i>
 					<div class="mdui-list-item-content">首页</div>
 				</a>
 				<div class="mdui-divider mdui-m-y-0"></div>
-				<a class="mdui-list-item mdui-ripple" href="blog">
+				<a class="mdui-list-item mdui-ripple mdui-list-item-active" href="../blog">
 					<i class="mdui-list-item-icon mdui-icon material-icons" style="color:#fff;">library_books</i>
 					<div class="mdui-list-item-content">博文列表</div>
 				</a>
-				<a class="mdui-list-item mdui-ripple" href="problems">
+				<a class="mdui-list-item mdui-ripple" href="../problems">
 					<i class="mdui-list-item-icon mdui-icon material-icons" style="color:#fff;">work</i>
 					<div class="mdui-list-item-content">题目中心</div>
 				</a>
-				<a class="mdui-list-item mdui-ripple" href="tools">
+				<a class="mdui-list-item mdui-ripple" href="../tools">
 					<i class="mdui-list-item-icon mdui-icon material-icons" style="color:#fff;">apps</i>
 					<div class="mdui-list-item-content">工具中心</div>
 				</a>
 			</ul>
 		</div>
 		
-		<!-- ---------介绍--------------- -->
+		<!-- ---------文章--------------- -->
 		<div>
 			<br><br><br><br><br><br><br>
-			<div id="page-index" class="mdui-container">
+			<div class="mdui-container mdui-shadow-5" style="background: white;">
+				<div style="padding: 7px;">
+					<h1 id="blog-title"></h1>
+					<div class="mdui-divider mdui-m-y-0"></div>
+					<div id="main"></div>
+				</div>
 			</div>
 			<br><br><br><br><br><br><br><br><br><br>
 		</div>
@@ -62,16 +75,16 @@
 		<footer style="background:#444;">
 		<div class="mdui-container mdui-p-t-3 mdui-text-center">
 			<a class="mdui-btn mdui-btn-icon" mdui-tooltip="{content:'腾讯 QQ'}" href="tencent://AddContact/?subcmd=all&uin=115549630">
-				<img src="file/image/qq.ico" width="20px" height="20px" style="margin:7px 0px 0px 0px;">
+				<img src="../file/image/qq.ico" width="20px" height="20px" style="margin:7px 0px 0px 0px;">
 			</a>
 			<a class="mdui-btn mdui-btn-icon" mdui-tooltip="{content:'洛谷'}" href="https://www.luogu.com.cn/user/234641">
-				<img src="file/image/luogu.ico" width="20px" height="20px" style="margin:7px 0px 0px 0px;">
+				<img src="../file/image/luogu.ico" width="20px" height="20px" style="margin:7px 0px 0px 0px;">
 			</a>
 			<a class="mdui-btn mdui-btn-icon" mdui-tooltip="{content:'CodeForces'}" href="https://codeforces.com/profile/liujiameng">
-				<img src="file/image/codeforces.png" width="20px" height="20px" style="margin:8px 0px 0px 0px;">
+				<img src="../file/image/codeforces.png" width="20px" height="20px" style="margin:8px 0px 0px 0px;">
 			</a>
 			<a class="mdui-btn mdui-btn-icon" mdui-tooltip="{content:'Atcoder'}" href="https://atcoder.jp/users/liujiameng">
-				<img src="file/image/atcoder.png" width="20px" height="20px" style="margin:8px 0px 0px 0px;">
+				<img src="../file/image/atcoder.png" width="20px" height="20px" style="margin:8px 0px 0px 0px;">
 			</a>
 		</div>
 		<br><br><br>
