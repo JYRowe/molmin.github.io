@@ -54,7 +54,7 @@ function markdown(file){
 				while(file.charAt(i)=='#')i++,tot++;
 				result=result+"<h"+tot+">";
 				titlegrade=tot;
-				for(var j=1;j<tot;j++)contents[contentstotal++]=[String(titlegrade),""];
+				contents[contentstotal++]=[String(titlegrade),""];
 				continue;
 			}
 			else if(file.charAt(i)=='`'){
