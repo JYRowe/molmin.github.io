@@ -52,9 +52,9 @@ function markdown(file){
 			if(file.charAt(i)=='#'){
 				var tot=0;
 				while(file.charAt(i)=='#')i++,tot++;
-				result=result+"<h"+tot+">";
 				titlegrade=tot;
-				contents[contentstotal++]=[String(titlegrade),""];
+				contents[contentstotal++]=[String(titlegrade),"",newrandomid()];
+				result=result+"<h"+titlegrade+" id='"+contents[contentstotal-1]+"'>";
 				continue;
 			}
 			else if(file.charAt(i)=='`'){
@@ -137,8 +137,8 @@ function markdown(file){
 		if(Number(contents[i][0])<mintitle)mintitle=Number(contents[i][0]);
 	for(var i=0;i<contents.length;i++){
 		if(Number(contents[i][0])<=2)markdown_content=markdown_content+'<p style="font-size: 14px; line-height: 16px;">';
-		else markdown_content=markdown_content+'<p style="font-size: 12px; line-height: 16px;">';
-		for(var j=1;j<=Number(contents[i][0]);j++)
+		else markdown_content=markdown_content+'<p style="font-size: 12px; line-height: 16px;" onclick="$(\''+contents[i][2]+'\').scrollIntoView(true);">';
+		for(var j=1;j<=Number(contents[i][0]-mintitle);j++)
 			markdown_content=markdown_content+'&nbsp;&nbsp;&nbsp;';
 		markdown_content=markdown_content+contents[i][1]+"</p>";
 	}
