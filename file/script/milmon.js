@@ -54,7 +54,7 @@ function markdown(file){
 				while(file.charAt(i)=='#')i++,tot++;
 				titlegrade=tot;
 				contents[contentstotal++]=[String(titlegrade),"",newrandomid()];
-				result=result+"<h"+titlegrade+" id='"+contents[contentstotal-1]+"'>";
+				result=result+"<h"+titlegrade+" id='"+contents[contentstotal-1][2]+"'>";
 				continue;
 			}
 			else if(file.charAt(i)=='`'){
