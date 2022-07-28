@@ -54,7 +54,7 @@ function markdown(file){
 				while(file.charAt(i)=='#')i++,tot++;
 				result=result+"<h"+tot+">";
 				titlegrade=tot;
-				markdown_content=markdown_content+"<p>";
+				markdown_content=markdown_content+'<p style="font-size: 12px; line-height: 16px;">';
 				for(var j=1;j<tot;j++)markdown_content=markdown_content+"&nbsp;&nbsp;";
 				continue;
 			}
