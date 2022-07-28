@@ -41,10 +41,12 @@ function loadfile(filename,func){
 	};
 }
 
+var markdown_content;
 function markdown(file){
 	var result="";
 	var titlegrade=0;
 	var instrong=false,inem=false,ininlinecode=false;
+	markdown_content="";
 	for(var i=0;i<file.length;i++){
 		if(i==0||(file.charAt(i-1)=='\n'&&i>=2&&file.charAt(i-2)=='\n')){
 			if(file.charAt(i)=='#'){
@@ -52,6 +54,8 @@ function markdown(file){
 				while(file.charAt(i)=='#')i++,tot++;
 				result=result+"<h"+tot+">";
 				titlegrade=tot;
+				markdown_content=markdown_content+"<p>";
+				for(var j=1;j<tot;j++)markdown_content=markdown_content+"&nbsp;&nbsp;";
 				continue;
 			}
 			else if(file.charAt(i)=='`'){
@@ -118,11 +122,14 @@ function markdown(file){
 				result=result+"'>";
 				i++; continue;
 			}
-			else result=result+file.charAt(i);
+			else{
+				result=result+file.charAt(i);
+				if(titlegrade!=0)markdown_content=markdown_content+file.charAt(i);
+			}
 		}
 		if(i==file.length-1||(file.charAt(i+1)=='\n'&&file.charAt(i+2)=='\n')){
 			if(titlegrade==0)result=result+"</p>";
-			else result=result+"</h"+titlegrade+">";
+			else result=result+"</h"+titlegrade+">",markdown_content=markdown_content+"</p>";
 		}
 	}
 	return result;
