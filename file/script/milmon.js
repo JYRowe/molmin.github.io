@@ -44,7 +44,7 @@ function loadfile(filename,func){
 var markdown_content;
 function markdown(file){
 	var result="";
-	var titlegrade=0;
+	var titlegrade=0,listgrade=0;
 	var instrong=false,inem=false,ininlinecode=false;
 	var contents=[],contentstotal=0;
 	for(var i=0;i<file.length;i++){
@@ -66,7 +66,7 @@ function markdown(file){
 					else if(file.charAt(i)=='\"')tmp2=tmp+"\\\"";
 					else if(file.charAt(i)=='\\')tmp2=tmp+"\\\\";
 					else if(file.charAt(i)=='\n')tmp2=tmp+"\\n";
-					else if(file.charAt(i)=='\t')tmp=tmp+"    ";
+					else if(file.charAt(i)=='\t')tmp2=tmp+"    ";
 					else tmp2=tmp2+file.charAt(i);
 				}
 				i=i+4;
@@ -75,6 +75,11 @@ function markdown(file){
 				continue;
 			}
 			else{
+// 				var j=i,total=0;
+// 				while(file.charAt(i)!='\n'&&j<file.length&&file.charAt(i)!='-')j++,total++;
+// 				if(file.charAt(j)=='\n
+// 				int grade=parseInt(total/2.0);
+// 				if(grade<
 				result=result+"<p>";
 				titlegrade=0;
 			}
