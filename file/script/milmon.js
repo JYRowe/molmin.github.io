@@ -66,6 +66,7 @@ function markdown(file){
 					else if(file.charAt(i)=='\"')tmp2=tmp+"\\\"";
 					else if(file.charAt(i)=='\\')tmp2=tmp+"\\\\";
 					else if(file.charAt(i)=='\n')tmp2=tmp+"\\n";
+					else if(text.charAt(i)=='\t')tmp=tmp+"    ";
 					else tmp2=tmp2+file.charAt(i);
 				}
 				i=i+4;
