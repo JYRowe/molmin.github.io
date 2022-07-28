@@ -62,7 +62,7 @@ function markdown(file){
 				var tmp="",tmp2="";
 				while(file.substring(i+1,i+5)!='\n```'){
 					i++;
-					if(tmp=='\t')tmp=tmp+"    ";
+					if(file.charAt(i)=='\t')tmp=tmp+"    ";
 					else tmp=tmp+"&#"+file.charCodeAt(i)+";";
 				}
 				i=i+4;
