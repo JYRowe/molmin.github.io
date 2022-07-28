@@ -123,7 +123,7 @@ function markdown(file){
 			}
 			else{
 				result=result+file.charAt(i);
-				if(titlegrade!=0)contents[contentstotal][1]=contents[contentstotal][1]+file.charAt(i);
+				if(titlegrade!=0)contents[contentstotal-1][1]=contents[contentstotal-1][1]+file.charAt(i);
 			}
 		}
 		if(i==file.length-1||(file.charAt(i+1)=='\n'&&file.charAt(i+2)=='\n')){
