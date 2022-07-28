@@ -61,13 +61,9 @@ function markdown(file){
 				while(file.charAt(i)!='\n')i++;
 				var tmp="",tmp2="";
 				while(file.substring(i+1,i+5)!='\n```'){
-					i++,tmp=tmp+"&#"+file.charCodeAt(i)+";";
-					if(file.charAt(i)=='\'')tmp2=tmp+"\\\'";
-					else if(file.charAt(i)=='\"')tmp2=tmp+"\\\"";
-					else if(file.charAt(i)=='\\')tmp2=tmp+"\\\\";
-					else if(file.charAt(i)=='\n')tmp2=tmp+"\\n";
-					else if(file.charAt(i)=='\t')tmp2=tmp+"    ";
-					else tmp2=tmp2+file.charAt(i);
+					i++;
+					if(tmp=='\t')tmp=tmp+"    ";
+					else tmp=tmp+"&#"+file.charCodeAt(i)+";";
 				}
 				i=i+4;
 				var id=newrandomid();
