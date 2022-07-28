@@ -12,6 +12,7 @@
 		<script>
 			loadfile("datas/"+getParam("id")+".md",function(text){
 				$("main").innerHTML=markdown(text);
+				$("content").innerHTML=markdown_content;
 				MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 			});
 			loadfile("config.txt",function(text){
@@ -94,7 +95,7 @@
 					</div>
 					<div class="mdui-col-offset-xs-8 mdui-col-xs-4" style="position: fixed;">
 						<div class="mdui-container-fluid mdui-shadow-5" style="background: white;">
-							<div style="padding: 7px;">
+							<div style="padding: 7px;" id="content">
 								<p style="font-size: 14px;" onclick="$('114514').scrollIntoView(true);">欧拉路径</p>
 								<p style="font-size: 14px;">欧拉路径的求法</p>
 							</div>
