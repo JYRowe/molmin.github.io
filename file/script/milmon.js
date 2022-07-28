@@ -136,10 +136,10 @@ function markdown(file){
 	for(var i=0;i<contents.length;i++)
 		if(Number(contents[i][0])<mintitle)mintitle=Number(contents[i][0]);
 	for(var i=0;i<contents.length;i++){
-		if(Number(contents[i][0])<=2)markdown_content=markdown_content+'<p style="font-size: 14px; line-height: 16px;">';
+		if(Number(contents[i][0])<=2)markdown_content=markdown_content+'<p style="font-size: 14px; line-height: 16px; cursor: pointer;" class="mdui-text-truncate">';
 		else markdown_content=markdown_content+'<p style="font-size: 12px; line-height: 16px;" onclick="$(\''+contents[i][2]+'\').scrollIntoView(true);">';
 		for(var j=1;j<=Number(contents[i][0]-mintitle);j++)
-			markdown_content=markdown_content+'&nbsp;&nbsp;&nbsp;';
+			markdown_content=markdown_content+'&nbsp;&nbsp;&nbsp;&nbsp;';
 		markdown_content=markdown_content+contents[i][1]+"</p>";
 	}
 	return result;
