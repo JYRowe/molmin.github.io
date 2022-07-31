@@ -38,7 +38,7 @@ $$
 
 $$
 \begin{aligned}
-f_{i,\ 1} & \gets +\infin \\
+f_{i,\ 1} & \gets +\infty \\
 g_{i,\ 1} & \gets 1 \\
 \end{aligned}.
 $$
