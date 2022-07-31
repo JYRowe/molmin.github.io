@@ -142,7 +142,7 @@
 				}
 				$("problemsearch-maychoosetags").innerHTML=htmlcode;
                 if(getParam("tag")!=null){
-                    var id=getParam("tag");
+                    var id=Number(getParam("tag"));
                     if(id<1000)choosesourcetag(id);
                     else choosealgorithmtag(id);
                 }
