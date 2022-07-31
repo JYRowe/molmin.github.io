@@ -50,3 +50,7 @@
 ## 【数据范围】
 
 $2 \le N \le 5000$，$1 \le K \le N − 1$，$0\le H_i \le 10^9$。
+
+## 【来源】
+
+USACO 2006 March Gold
